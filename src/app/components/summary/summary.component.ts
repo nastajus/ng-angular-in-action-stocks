@@ -8,6 +8,11 @@ import { Component, Input } from '@angular/core';
 export class SummaryComponent {
   @Input() stock: any;
 
+  @Input('setStock')
+  set setStock(value:boolean) {
+    this.stock = value;
+  }
+
   isNegative() {
     if (!this.stock || this.stock.change >= 0) {
       return false;
